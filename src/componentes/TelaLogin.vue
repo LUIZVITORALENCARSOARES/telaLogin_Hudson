@@ -14,7 +14,7 @@
                 
                 <img src="../assets/Lovepik_com-401759033-education-logo.png" alt="Logo" class="logo">
                 
-                <form action="" method="post" autocomplete="on">
+                <form action="#" method="post" autocomplete="on">
                     <div class="areaTexto">
                         <label for="usuario">Usuário</label>
                         <input type="text" name="usuario" placeholder="Usuário" autocomplete="username" required minlength="3" maxlength="30">
