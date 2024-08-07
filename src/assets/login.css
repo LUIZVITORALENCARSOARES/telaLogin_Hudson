@@ -48,7 +48,7 @@ form {
 .areaTexto > label {
     color: black;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 13px;
 }
 
 .areaTexto > input {
@@ -67,15 +67,20 @@ form {
     color: rgba(0, 0, 0, 0.568);
 }
 
-a {
-    padding-top: 15px;
+.recuperar {
+    padding-top: 18px;
+    padding-left: 90px;
     text-decoration: none;
     color: rgb(85, 85, 85);
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: rgb(231, 227, 235);
+    cursor: pointer;
 }
 
-a:hover{
+.recuperar:hover {
     color: black;
     text-decoration: underline;
 }
@@ -87,12 +92,13 @@ a:hover{
     align-items: center;
     flex-direction: column;
     padding-top: 5px;
+    padding-left: 14px;
 }
 
 .botaoLogin {
     width: 100%;
     padding: 16px 0px;
-    margin: 15px;
+    margin: 15px 0px;
     border: none;
     border-radius: 8px;
     outline: none;
@@ -123,17 +129,26 @@ a:hover{
 }
 
 .botaoCadastro:hover {
-    color: white;
-    background-color: purple;
+    color: purple;
+    background-color: rgb(209, 177, 240);
 }
 
-@media only screen and (max-width: 950px ) and (min-width: 400px){
+@media only screen and (max-width: 950px ) and (min-width: 601px){
     .cartaoLogin{
         width: 70%;
     }
+
+    .recuperar {
+        padding-left: 143px;
+    }
+
+    .botao {
+        padding-left: 40px;
+        width: 80%;
+    }
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 600px){
     .loginPrincipal{
         flex-direction: column;
     }
@@ -142,11 +157,11 @@ a:hover{
         width: 60%;
     }
 
-    .titulo{
-        font-size: 25px;
+    .recuperar {
+        padding-left: 42px;
     }
 
-    a {
-        padding-left: 10px;
+    .botao {
+        padding-left: 9px;
     }
 }
