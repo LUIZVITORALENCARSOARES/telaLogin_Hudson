@@ -23,8 +23,9 @@
                     <div class="areaTexto">
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" placeholder="Senha" required minlength="6" maxlength="20">
-                        <a href="#">Esqueci a senha</a>
                     </div>
+
+                    <a href="#">Esqueci a senha</a>
                     
                     <div class="botao">
                         <button type="submit" class="botaoLogin">LOGIN</button>

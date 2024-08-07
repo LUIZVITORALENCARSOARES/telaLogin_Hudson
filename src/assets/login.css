@@ -68,14 +68,16 @@ form {
 }
 
 a {
-    padding-top: 30px;
-    margin: 0;
+    padding-top: 15px;
     text-decoration: none;
     color: rgb(85, 85, 85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 50px;
+    display: block;
+    text-align: center;
+}
+
+a:hover{
+    color: black;
+    text-decoration: underline;
 }
 
 .botao {
@@ -85,7 +87,6 @@ a {
     align-items: center;
     flex-direction: column;
     padding-top: 5px;
-    margin-left: 15px;
 }
 
 .botaoLogin {
