@@ -1,34 +1,35 @@
 <!-- SCRIPT -->
-<script setup>
+<script>
 
     // Funções
 
-    function validateFields() {
-        const usernameValid = isUsernameValid();
-        document.getElementById('recuperar-senha').disabled = !usernameValid;
+    export default {
+        data() {
+            return {
+                usuario: "",
+                senha: ""
+            }
+        },
 
-        const passwordValid = isPasswordValid();
-        document.getElementById('botao-login').disabled = !usernameValid || !passwordValid;
-    }
+        computed: {
+            isUsernameValid(){
+                return this.usuario.length > 3;
+            },
 
-    function isUsernameValid() {
-        const usuario = document.getElementById("usuario").value;
-        if (!usuario) {
-            return false;
+            isPasswordValid() {
+                return this.senha.length > 6;
+            },
+
+            isFormValid() {
+                return this.isUsernameValid && this.isPasswordValid;
+            }
+        },
+
+        methods: {
+            validateFields() {
+                
+            }
         }
-        return validateUsuario(usuario);
-    }
-
-    function isPasswordValid() {
-        const senha = document.getElementById('senha').value;
-        if (!senha) {
-            return false;
-        }
-        return true;
-    }
-
-    function validateUsuario(usuario) {
-        return /\S+@\S+\.\S+/.teste(usuario);
     }
 
 </script>
@@ -46,21 +47,21 @@
                 <form action="#" method="post" autocomplete="on">
                     <div class="areaTexto">
                         <label for="usuario">Usuário</label>
-                        <input type="text" name="usuario" id="usuario" onchange="validateFields()" placeholder="Nome de Usuário" autocomplete="username" required minlength="3" maxlength="30">
+                        <input type="text" name="usuario" v-model="usuario" @input="validateFields" placeholder="Nome de Usuário" autocomplete="username" required>
                     </div>
                     
                     <div class="areaTexto">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha" onchange="validateFields()" placeholder="Senha" required minlength="6" maxlength="20">
+                        <input type="password" name="senha" v-model="senha" @input="validateFields" placeholder="Senha" required>
                     </div>
 
                     <!-- Botões -->
                     <div>
-                        <button type="button" class="recuperar" id="recuperar-senha" disabled="true">Esqueci a senha</button>
+                        <button type="button" class="recuperar" id="recuperar-senha":disabled="!isUsernameValid">Recuperar Senha</button>
                     </div>
                     
                     <div class="botao">
-                        <button type="submit" class="botaoLogin" id="botao-login" disabled="true">ENTRAR</button>
+                        <button type="submit" class="botaoLogin" id="botao-login":disabled="!isFormValid">ENTRAR</button>
                         <button type="button" class="botaoCadastro">CRIAR CONTA</button>
                     </div>
                 </form>
